@@ -1,0 +1,18 @@
+Bonjour, je suis zlight-bot (by landryjohn -> </lnjohn>)
+
+Je suis l'activité d'ENEO en temps réel et je te donne 
+le programme prévisionnel de coupure en raison des 
+travaux de maintenance sur le réseau élétrique. 
+
+Comment ca marche : 
+--> /coupures [region ou ville]
+    [region ou ville] : C'est la region ou la ville du cameroun dans laquelle tu te trouves, 
+    il faudra préciser comme ci-dessous. ce paramètre est optionnel
+    !!! Exemples : 
+    /coupures ville=yaoundé
+    /coupures region=centre
+    /coupures region=littoral
+--> /aide : pour avoir de l'aide
+--> /auteur : pour avoir les informations sur mon concepteur
+
+Auteur : Landry John, landryjohnmeli@gmail.com 
