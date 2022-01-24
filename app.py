@@ -1,8 +1,7 @@
 import logging, requests, os
-import re
 
-from telegram import Update
-from .cities import CITIES 
+from telegram import Telegram
+from utils import CITIES 
 
 TOKEN = ""
 
@@ -15,14 +14,19 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-def cuts() -> None :
-    integrity = True 
-    req = 'VILLE=CENTRE'
-    if re.fullmatch('[A-Za-z]*=[A-Za-z]*', req.strip().replace(' ','')) :
-        query,target = req.split('=')
-        integrity = query in ['VILLE', 'REGION'] and True 
-        # TODO : control the integrity of the command 
+def cuts() -> object:
+    req = '/coupure EST'
+    #  Verify if only one city is requested, multiple cities if for the next version of the bot
+    city = [city for city in req.split() if city.upper() in CITIES.keys()]
+    if any(city) and len(city) < 2 :
+        try :
+            resp = requests.post(url="https://alert.eneo.cm/ajaxOutage.php", data={'region':CITIES[city[0]]}).json()
+            return resp
+        except Exception as error :
+            print("An error occured ", error) 
+    else : 
+        return {'status': False, 'message': "Vous devez fournir une seule ville valide"}
 
 
-# if __name__ == "__main__" :
-#     main() 
+if __name__ == "__main__" :
+    r = cuts() 

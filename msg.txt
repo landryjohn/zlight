@@ -6,12 +6,11 @@ travaux de maintenance sur le réseau élétrique.
 
 Comment ca marche : 
 --> /coupures [region ou ville]
-    [region ou ville] : C'est la region ou la ville du cameroun dans laquelle tu te trouves, 
+    [region] : C'est la region du cameroun dans laquelle tu te trouves, 
     il faudra préciser comme ci-dessous. ce paramètre est optionnel
-    !!! Exemples : 
-    /coupures ville=yaoundé
-    /coupures region=centre
-    /coupures region=littoral
+    !!! Exemples :
+    /coupures centre
+    /coupures littoral
 --> /aide : pour avoir de l'aide
 --> /auteur : pour avoir les informations sur mon concepteur
 
